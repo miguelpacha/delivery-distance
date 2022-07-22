@@ -1,3 +1,4 @@
+# Respuestas a las preguntas del desafío
 ## Q 1
 * Para el cliente, hay dos funcionalidades principales: comprar los productos, y acompañar el reparto.
 * El primer componente se asemeja a una tienda web, por lo que puede ser un servicio una API REST.
