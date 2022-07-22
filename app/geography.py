@@ -2,7 +2,7 @@ from math import radians, sin, asin, cos, sqrt
 
 EARTH_RADIUS = 6371 # https://en.wikipedia.org/wiki/Earth_radius
 
-def distance(_lat1, _lon1, _lat2, _lon2):
+def calculate_distance(_lat1, _lon1, _lat2, _lon2):
     # https://en.wikipedia.org/wiki/Haversine_formula#Formulation
     
     lat1, lon1, lat2, lon2 = (radians(angle) for angle in (_lat1, _lon1, _lat2, _lon2))
