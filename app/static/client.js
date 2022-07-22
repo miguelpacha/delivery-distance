@@ -5,7 +5,6 @@ window.addEventListener( "load", () => {
     const result = document.getElementById("result");
     show_error_msg = e => {result.textContent = 'Could not calculate distance.'}
 
-
     form.addEventListener( "submit", function ( event ) {
       console.log("!");
       event.preventDefault();
