@@ -14,7 +14,11 @@ window.addEventListener( "load", () => {  4
             ['origin', 'destination', 'distance'].forEach(
               key => {
                 const td = document.createElement('td');
-                td.innerText = query[key];
+                if (key==='distance' && query[key]) {
+                  td.innerText = query[key].toFixed(2);
+                } else {
+                  td.innerText = query[key];
+                }
                 row.appendChild(td);
               }
             )
@@ -23,7 +27,7 @@ window.addEventListener( "load", () => {  4
           result.innerText = ''
         } catch (e) {
           console.log(e)
-            show_error_msg(e);
+          show_error_msg(e);
         }
     });
     XHR.addEventListener( "error", show_error_msg);

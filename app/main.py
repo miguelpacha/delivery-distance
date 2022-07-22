@@ -7,6 +7,7 @@ from app.geography import calculate_distance
 from app.model import SearchItem
 from app.nominatim import search_nominatim
 
+# inspired by https://towardsdatascience.com/fastapi-cloud-database-loading-with-python-1f531f1d438a
 
 app = FastAPI()
 
@@ -39,4 +40,6 @@ def get_distance(origin: str, destination: str, session: Session = Depends(get_d
 
 @app.get("/history")
 def get_history(session: Session = Depends(get_db)):
-    return session.query(SearchItem).all()
+    # https://stackoverflow.com/a/51765087/9116169
+    cte = session.query(SearchItem).cte()
+    return session.query(cte).order_by(cte.c.id.desc()).all()

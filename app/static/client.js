@@ -9,6 +9,8 @@ window.addEventListener( "load", () => {
       console.log("!");
       event.preventDefault();
       const FD = new FormData( form );
+
+      // Inspired by https://stackoverflow.com/a/35947028/9116169
       const query = Array.from(FD.entries())
         .reduce(
             (p, n) => p+n[0]+'='+n[1]+'&',
@@ -33,4 +35,3 @@ window.addEventListener( "load", () => {
       XHR.send();
     } );
   } );
-  
